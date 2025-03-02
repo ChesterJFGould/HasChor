@@ -41,15 +41,15 @@ library
         Choreography.Network.Local
         Control.Monad.Freer
     build-depends:
-        , base                 >= 4.16 && < 4.20
+        , base                 >= 4.16 && <= 4.21.0.0
         , bytestring           >= 0.11 && < 0.13
         , http-client          >= 0.7  && < 0.8
         , servant              >= 0.19 && < 0.21
         , servant-client       >= 0.19 && < 0.21
         , servant-server       >= 0.19 && < 0.21
-        , template-haskell     >= 2.18 && < 2.22
+        , template-haskell     >= 2.18 && <= 2.23.0.0
         , unordered-containers >= 0.2  && < 0.3
-        , warp                 >= 3.3  && < 3.4
+        , warp                 >= 3.3  && <= 3.4.7
 
 executable bank-2pc
     hs-source-dirs:   examples/bank-2pc
@@ -57,9 +57,9 @@ executable bank-2pc
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
+        , base    >= 4.16 && <= 4.21.0.0
         , split   >= 0.2  && < 0.3
-        , time    >= 1.11 && < 1.13
+        , time    >= 1.11 && <= 1.14
 
 executable bookseller-0-network
     hs-source-dirs:   examples/bookseller-0-network
@@ -67,8 +67,8 @@ executable bookseller-0-network
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
-        , time    >= 1.11 && < 1.13
+        , base    >= 4.16 && <= 4.21.0.0
+        , time    >= 1.11 && <= 1.14
 
 executable bookseller-1-simple
     hs-source-dirs:   examples/bookseller-1-simple
@@ -76,8 +76,8 @@ executable bookseller-1-simple
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
-        , time    >= 1.11 && < 1.13
+        , base    >= 4.16 && <= 4.21.0.0
+        , time    >= 1.11 && <= 1.14
 
 executable bookseller-2-higher-order
     hs-source-dirs:   examples/bookseller-2-higher-order
@@ -85,8 +85,8 @@ executable bookseller-2-higher-order
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
-        , time    >= 1.11 && < 1.13
+        , base    >= 4.16 && <= 4.21.0.0
+        , time    >= 1.11 && <= 1.14
 
 executable bookseller-3-loc-poly
     hs-source-dirs:   examples/bookseller-3-loc-poly
@@ -94,8 +94,8 @@ executable bookseller-3-loc-poly
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
-        , time    >= 1.11 && < 1.13
+        , base    >= 4.16 && <= 4.21.0.0
+        , time    >= 1.11 && <= 1.14
 
 executable diffiehellman
     hs-source-dirs:   examples/diffiehellman
@@ -103,9 +103,9 @@ executable diffiehellman
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base    >= 4.16 && < 4.20
+        , base    >= 4.16 && <= 4.21.0.0
         , random  >= 1.2  && < 1.3
-        , time    >= 1.11 && < 1.13
+        , time    >= 1.11 && <= 1.14
 
 executable karatsuba
     hs-source-dirs:   examples/karatsuba
@@ -114,7 +114,7 @@ executable karatsuba
     build-depends:
         , HasChor
         , async      >= 2.2  && < 2.3
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
 
 executable kvs1
@@ -123,9 +123,9 @@ executable kvs1
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable kvs2
     hs-source-dirs:   examples/kvs-2-primary-backup
@@ -133,9 +133,9 @@ executable kvs2
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable kvs3
     hs-source-dirs:   examples/kvs-3-higher-order
@@ -143,9 +143,9 @@ executable kvs3
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable kvs4
     hs-source-dirs:   examples/kvs-4-loc-poly
@@ -153,9 +153,9 @@ executable kvs4
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable mergesort
     hs-source-dirs:   examples/mergesort
@@ -163,9 +163,9 @@ executable mergesort
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable quicksort
     hs-source-dirs:   examples/quicksort
@@ -174,9 +174,9 @@ executable quicksort
     build-depends:
         , HasChor
         , async      >= 2.2  && < 2.3
-        , base       >= 4.16 && < 4.20
+        , base       >= 4.16 && <= 4.21.0.0
         , containers >= 0.6  && < 0.7
-        , time       >= 1.11 && < 1.13
+        , time       >= 1.11 && <= 1.14
 
 executable ring-leader
     hs-source-dirs:   examples/ring-leader
@@ -184,7 +184,7 @@ executable ring-leader
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base         >= 4.16 && < 4.20
+        , base         >= 4.16 && <= 4.21.0.0
         , transformers >= 0.5  && < 0.7
 
 executable playground
@@ -193,4 +193,4 @@ executable playground
     default-language: GHC2021
     build-depends:
         , HasChor
-        , base         >= 4.16 && < 4.20
+        , base         >= 4.16 && <= 4.21.0.0

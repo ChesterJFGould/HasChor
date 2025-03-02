@@ -21,7 +21,7 @@ seller = Proxy
 bookseller :: KnownSymbol a => Proxy a -> Choreo IO (Maybe Day @ a)
 bookseller someBuyer = do
   -- the buyer reads the title of the book and sends it to the seller
-  title <- (buyer, \_ -> do
+  title <- (someBuyer, \_ -> do
                putStrLn "Enter the title of the book to buy"
                getLine
            )

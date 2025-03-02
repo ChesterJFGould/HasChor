@@ -37,7 +37,8 @@ import Choreography.Network.Http
 import Choreography.Network.Local
 import Control.Monad.IO.Class
 import Data.Proxy
+import GHC.TypeLits
 
 -- | Run a choreography with a message transport backend.
-runChoreography :: (Backend config, MonadIO m) => config -> Choreo m a -> LocTm -> m a
-runChoreography cfg choreo l = runNetwork cfg l (epp choreo l)
+runChoreography :: (Backend config, MonadIO m) => config -> Choreo LocTy SSymbol l m a -> SSymbol l -> m a
+runChoreography cfg choreo l@SSymbol = runNetwork cfg (toLocTm l) (epp choreo l)

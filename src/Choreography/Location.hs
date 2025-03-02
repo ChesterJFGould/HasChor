@@ -1,10 +1,12 @@
-{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE DataKinds, TypeFamilies #-}
 
 -- | This module defines locations and located values.
 module Choreography.Location where
 
 import Data.Proxy
 import Data.String
+import Data.Type.Equality
+import Data.Void
 import GHC.TypeLits
 import Language.Haskell.TH
 
@@ -15,8 +17,8 @@ type LocTm = String
 type LocTy = Symbol
 
 -- | Convert a type-level location to a term-level location.
-toLocTm :: forall (l :: LocTy). KnownSymbol l => Proxy l -> LocTm
-toLocTm = symbolVal
+toLocTm :: forall (l :: LocTy). KnownSymbol l => SSymbol l -> LocTm
+toLocTm l@SSymbol = symbolVal l
 
 -- | Located values.
 --
@@ -25,6 +27,13 @@ data a @ (l :: LocTy)
   = Wrap a -- ^ A located value @a \@ l@ from location @l@'s perspective.
   | Empty  -- ^ A located value @a \@ l@ from locations other than @l@'s
            -- perspective.
+
+-- Represents what an `a` located at node ll looks like from node l
+-- type family At (l :: locTy) (l' :: locTy) a where
+--   At l l a = a
+--   At _ _ _ = ()
+
+type At (l :: locTy) (l' :: locTy) a = (l :~: l') -> a
 
 -- | Wrap a value as a located value.
 wrap :: a -> a @ l
